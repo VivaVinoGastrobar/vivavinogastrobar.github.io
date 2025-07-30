@@ -1,94 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=190, user-scalable=no">
-  <title>Trattoria Bella Vita</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      background-color: #efebe2;
-      color: #553323;
-      font-family: 'Georgia', serif;
-      width: 190px;
-      min-height: 1940px;
-      overflow-x: hidden;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 190px;
-      height: 50px;
-      background-color: #efebe2;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    header button {
-      background: none;
-      border: none;
-      color: #553323;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .hero {
-      height: 400px;
-      background: url('logo.png') no-repeat center center;
-      background-size: contain;
-      position: relative;
-    }
-
-    .menu-img {
-      margin-top: 20px;
-      width: 190px;
-      height: auto;
-    }
-
-    .contacto {
-      width: 190px;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
-    .contacto h2 {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .contacto p {
-      font-size: 12px;
-      margin: 3px 0;
-    } 
-  </style>
+  <meta charset="utf-8" />
+  <title>Viva Vino Gastrobar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Viva Vino Gastrobar · Menú, reseñas, contacto y reservas" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-</body>
 <body>
-  <header>
-    <button onclick="location.href='index-en.html'">English</button>
-    <button onclick="window.open('https://maps.google.com/?q=Trattoria+Bella+Vita','_blank')">Reseñas</button>
-    <button onclick="location.href='tel:+34960000000'">Reservar</button>
-    <button onclick="document.getElementById('contacto').scrollIntoView()">Contacto</button>
-  </header>
+  <nav class="nav" id="nav">
+    <div class="nav__wrap">
+      <div class="brand" aria-label="Viva Vino Gastrobar">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">Viva Vino Gastrobar</span>
+      </div>
 
-  <div class="hero"></div>
+      <div class="nav__links" role="navigation" aria-label="Principal">
+        <a href="#menu" id="link-menu">Menú</a>
+        <a href="#" id="link-reseñas" rel="noopener">Reseñas</a>
+        <a href="#contacto" id="link-contacto">Contacto</a>
+        <a href="#" id="link-reservas" class="nav__cta">Reservas</a>
+      </div>
 
-  <img src="ESP menú 30.png" alt="Carta del restaurante" class="menu-img">
-
-  <div id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>Teléfono: +34 637 40 40 82</p>
-    <p>Email: vivavinogastrobar@gmail.com</p>
-    <p>Instagram: @vivavinogastrobar</p>
-    <p>Facebook: /vivavinogastrobar</p>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
+  </nav>
+
+  <main class="container">
+    <section id="menu" class="hero">
+      <div class="card menu-box">
+        <h1 class="section-title">Nuestra carta</h1>
+        <p class="muted">
+          Vea aquí el menú completo (optimizado para móvil). También puede
+          <a id="pdfLink" href="menu.pdf" target="_blank" rel="noopener">descargar el PDF</a>.
+        </p>
+
+        <!-- Pegue aquí las imágenes exportadas de Canva (partidas en secciones) -->
+        <figure class="menu-figure">
+          <img src="menu-1.webp" alt="Carta Viva Vino — sección 1" loading="lazy" />
+          <img src="menu-2.webp" alt="Carta Viva Vino — sección 2" loading="lazy" />
+          <img src="menu-3.webp" alt="Carta Viva Vino — sección 3" loading="lazy" />
+          <!-- Añada más <img> según necesite -->
+        </figure>
+      </div>
+
+      <aside class="card">
+        <h2 class="section-title">Reservas rápidas</h2>
+        <p class="muted">Pulse para llamarnos ahora mismo.</p>
+        <p>
+          <a id="reserveBtn" class="nav__cta" href="#">Llamar y reservar</a>
+        </p>
+        <p class="muted" style="margin-top:8px">
+          Horario: <span>L–D 12:00–23:30</span><br/>
+          Dirección: <span>[Calle y número]</span>
+        </p>
+      </aside>
+    </section>
+
+    <section id="contacto" class="card" style="margin-top:16px">
+      <h2 class="section-title">Contacto</h2>
+      <div class="list">
+        <div class="item">
+          <span>Email</span>
+          <a id="emailLink" href="mailto:correo@dominio.com">correo@dominio.com</a>
+        </div>
+        <div class="item">
+          <span>Instagram</span>
+          <a id="igLink" href="https://instagram.com/vivavino.gastrobar" target="_blank" rel="noopener">@vivavino.gastrobar</a>
+        </div>
+        <div class="item">
+          <span>Facebook</span>
+          <a id="fbLink" href="https://facebook.com/vivavino.gastrobar" target="_blank" rel="noopener">Viva Vino Gastrobar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Viva Vino Gastrobar · Hecho con buen vino y mejor código.
+  </footer>
+
+  <script>
+    // ========= CONFIGURACIÓN RÁPIDA =========
+    const PHONE_NUMBER = "+34XXXXXXXXX"; // TODO: +34600111222
+    const MAPS_URL_EXACT = ""; // TODO: pegue aquí su ficha de Google Maps
+    const MAPS_FALLBACK = "https://www.google.com/maps/search/?api=1&query=Viva%20Vino%20Gastrobar";
+
+    // ========= LÓGICA =========
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = new Date().getFullYear();
+
+    const telHref = n => "tel:" + String(n).replace(/[^\d+]/g,"");
+
+    const reserveBtn = document.getElementById("reserveBtn");
+    const linkReservas = document.getElementById("link-reservas");
+    const linkReseñas = document.getElementById("link-reseñas");
+
+    if (PHONE_NUMBER.trim()) {
+      const href = telHref(PHONE_NUMBER);
+      reserveBtn.href = href;
+      linkReservas.href = href;
+    } else {
+      reserveBtn.addEventListener("click", e=>{
+        e.preventDefault();
+        alert("Configure el número de teléfono en index.html (const PHONE_NUMBER).");
+      });
+    }
+
+    linkReseñas.addEventListener("click", e=>{
+      e.preventDefault();
+      window.open(MAPS_URL_EXACT.trim() ? MAPS_URL_EXACT : MAPS_FALLBACK, "_blank", "noopener");
+    });
+
+    // Menú móvil (hamburguesa)
+    const nav = document.getElementById("nav");
+    const hamburger = document.getElementById("hamburger");
+    hamburger.addEventListener("click", ()=> nav.classList.toggle("open"));
+    document.querySelectorAll('.nav__links a[href^="#"]').forEach(a=>{
+      a.addEventListener("click", ()=> nav.classList.remove("open"));
+    });
+
+    // Scroll suave
+    document.addEventListener('click', function(e){
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+    }, true);
+  </script>
 </body>
 </html>
