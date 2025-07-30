@@ -1,0 +1,121 @@
+__Global coding structure of website__
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=190, user-scalable=no">
+  <title>Trattoria Bella Vita</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #efebe2;
+      color: #553323;
+      font-family: 'Georgia', serif;
+      width: 190px;
+      min-height: 1940px;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 50px;
+      background-color: #efebe2;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header button {
+      background: none;
+      border: none;
+      color: #553323;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 400px;
+      background: url('logo.png') no-repeat center center;
+      background-size: contain;
+      position: relative;
+    }
+
+    .menu-img {
+      margin-top: 20px;
+      width: 190px;
+      height: auto;
+    }
+
+    .contacto {
+      width: 190px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .contacto h2 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .contacto p {
+      font-size: 12px;
+      margin: 3px 0;
+    }
+
+    .carrusel {
+      width: 190px;
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .carrusel img {
+      width: 190px;
+      height: 120px;
+      object-fit: cover;
+      animation: parallax 15s infinite linear;
+    }
+
+    @keyframes parallax {
+      0% {transform: translateX(0);}
+      100% {transform: translateX(-190px);}
+    }
+  </style>
+</head>
+
+__ body of website coding__
+</body>
+<body>
+  <header>
+    <button onclick="location.href='index-en.html'">English</button>
+    <button onclick="window.open('https://maps.google.com/?q=Trattoria+Bella+Vita','_blank')">Reseñas</button>
+    <button onclick="location.href='tel:+34960000000'">Reservar</button>
+    <button onclick="document.getElementById('contacto').scrollIntoView()">Contacto</button>
+  </header>
+
+  <div class="hero"></div>
+
+  <img src="ESP menú 30.png" alt="Carta del restaurante" class="menu-img">
+
+  <div id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>Teléfono: +34 637 40 40 82</p>
+    <p>Email: vivavinogastrobar@gmail.com</p>
+    <p>Instagram: @vivavinogastrobar</p>
+    <p>Facebook: /vivavinogastrobar</p>
+
+    <div class="carrusel">
+      <img src="Restaurante 1.jpg" alt="Restaurante 1">
+      <img src="Restaurante 2.jpg" alt="Restaurante 2">
+      <img src=""
+    </div>
+  </div>
+</body>
+</html>
